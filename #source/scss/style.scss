@@ -1,0 +1,14 @@
+//<FILES>
+@import "nullstyle.scss";
+//====================================================
+body {
+	font-family: 'PT Sans', sans-serif;
+}
+.wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.todo {
+	padding: 20px;
+	box-shadow: 5px 5px 10px #ccc;
+}
