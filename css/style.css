@@ -61,9 +61,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit; }
 
-body {
-  font-family: 'PT Sans', sans-serif; }
-
 .wrapper {
   max-width: 600px;
   margin: 0 auto; }
@@ -72,3 +69,62 @@ body {
   padding: 20px;
   -webkit-box-shadow: 5px 5px 10px #ccc;
   box-shadow: 5px 5px 10px #ccc; }
+
+.todo__title {
+  font-size: 24px;
+  margin-bottom: 20px; }
+
+.todo__form {
+  background-color: #f44336;
+  padding: 30px; }
+
+.form__title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px; }
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.form__input {
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  padding: 10px; }
+
+.form__btn {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #d9d9d9;
+  color: #555;
+  padding: 10px; }
+  .form__btn:hover {
+    background-color: #bbb; }
+
+.todo__list li {
+  position: relative;
+  padding: 10px 30px;
+  cursor: pointer; }
+  .todo__list li:nth-child(odd) {
+    background-color: #f9f9f9; }
+  .todo__list li:nth-child(even) {
+    background-color: #eee; }
+  .todo__list li:hover {
+    background-color: #ddd; }
+  .todo__list li .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 15px; }
+    .todo__list li .close:hover {
+      background-color: #f44336; }
+
+.done {
+  background-color: #888;
+  color: #fff;
+  text-decoration: line-through; }

@@ -1,9 +1,6 @@
 //<FILES>
 @import "nullstyle.scss";
 //====================================================
-body {
-	font-family: 'PT Sans', sans-serif;
-}
 .wrapper {
 	max-width: 600px;
 	margin: 0 auto;
@@ -11,4 +8,66 @@ body {
 .todo {
 	padding: 20px;
 	box-shadow: 5px 5px 10px #ccc;
+}
+.todo__title {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+.todo__form {
+	background-color: #f44336;
+	padding: 30px;
+}
+.form__title {
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.form {
+	display: flex;
+}
+.form__input {
+	flex: 3;
+	padding: 10px;
+}
+.form__btn {
+	flex: 1;
+	background-color: #d9d9d9;
+	color: #555;
+	padding: 10px;
+	&:hover {
+		background-color: #bbb;
+	}
+}
+.todo__list {
+	li {
+		position: relative;
+		padding: 10px 30px;
+		cursor: pointer;
+		&:nth-child(odd) {
+			background-color: #f9f9f9;
+		}
+		&:nth-child(even) {
+			background-color: #eee;
+		}
+		&:hover {
+			background-color: #ddd;
+		}
+		.close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			//font-size: 18px;
+			padding: 10px 15px;
+			&:hover {
+				background-color: #f44336;
+			}
+		}
+	}
+}
+.done {
+	background-color: #888;
+	color: #fff;
+	text-decoration: line-through;
 }
