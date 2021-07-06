@@ -110,10 +110,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 10px 30px;
   cursor: pointer; }
-  .todo__list li:nth-child(odd) {
-    background-color: #f9f9f9; }
-  .todo__list li:nth-child(even) {
-    background-color: #eee; }
   .todo__list li:hover {
     background-color: #ddd; }
   .todo__list li .close {

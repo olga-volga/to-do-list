@@ -1,10 +1,33 @@
-$(document).ready(function(){
-	$('.header__burger').click(function(event) {
-		$('.header__burger, .header__menu').toggleClass('active');
-		$('body').toggleClass('lock');
+"use strict";
+
+window.addEventListener('DOMContentLoaded', () => {
+
+	const form = document.querySelector('form'),
+		  input = document.querySelector('.form__input'),
+		  formBtn = document.querySelector('.form__btn'),
+		  list = document.querySelector('.todo__list'),
+		  listItem = document.querySelectorAll('li'),
+		  closeBtn = document.querySelectorAll('.close');
+
+	listItem.forEach(item => {
+		item.addEventListener('click', () => {
+			item.classList.toggle('done');
+		});
 	});
-	$('.header__menu').click(function(event) {
-		$('.header__burger, .header__menu').removeClass('active');
-		$('body').removeClass('lock');
+
+	closeBtn.forEach(item => {
+		item.addEventListener('click', (e) => {
+			if (e.target && e.target.parentElement.tagName == 'LI') {
+				e.target.parentElement.style.display = 'none';
+			}
+		});
 	});
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		console.log(input.value);
+		list.innerHTML += `<li>${input.value} <span class="close">&times;</span></li>`
+		e.target.reset();
+	});
+	
 });
