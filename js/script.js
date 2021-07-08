@@ -8,26 +8,29 @@ window.addEventListener('DOMContentLoaded', () => {
 		  list = document.querySelector('.todo__list'),
 		  listItem = document.querySelectorAll('li'),
 		  closeBtn = document.querySelectorAll('.close');
+	
+	function crossItem(item) {
+		item.classList.toggle('done');
+	}
 
-	listItem.forEach(item => {
-		item.addEventListener('click', () => {
-			item.classList.toggle('done');
-		});
-	});
+	function hideItem(item) {
+		item.parentElement.style.display = 'none';
+	}
 
-	closeBtn.forEach(item => {
-		item.addEventListener('click', (e) => {
-			if (e.target && e.target.parentElement.tagName == 'LI') {
-				e.target.parentElement.style.display = 'none';
-			}
-		});
+	list.addEventListener('click', (e) => {
+		if (e.target && e.target.tagName == 'LI') {
+			crossItem(e.target);
+		} else {
+			hideItem(e.target);
+		}
 	});
 
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
-		console.log(input.value);
-		list.innerHTML += `<li>${input.value} <span class="close">&times;</span></li>`
+		if (input.value) {
+			list.innerHTML += `<li>${input.value[0].toUpperCase()}${input.value.slice(1)} <span class="close">&times;</span></li>`;
+		}
 		e.target.reset();
 	});
-	
+
 });
